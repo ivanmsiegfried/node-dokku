@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= user ? "Edit User" : "Add User" %></title>
+</head>
+<body>
+    <h1><%= user ? "Edit User" : "Add User" %></h1>
+    
+    <form method="POST" action="<%= user ? '/edit/' + user.id : '/add' %>">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" value="<%= user ? user.name : '' %>" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="<%= user ? user.email : '' %>" required>
+        
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
